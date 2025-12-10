@@ -30,18 +30,34 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         html { scroll-behavior: smooth; }
 
-        /* HERO BACKGROUND: Deep Current (Subtle) */
-        .deep-current {
-            background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.15), transparent 60%);
-            width: 150%; height: 150%;
-            position: absolute; top: -25%; left: -25%;
-            animation: deep-move 20s ease-in-out infinite alternate;
-            opacity: 0.6;
-            pointer-events: none;
+        /* HERO CTA: Cosmic Button */
+        .btn-cosmic {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0px rgba(34, 211, 238, 0);
         }
-        @keyframes deep-move {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(-20px, 20px) scale(1.1); }
+        
+        .btn-cosmic::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-cosmic:hover {
+            border-color: rgba(34, 211, 238, 0.5);
+            box-shadow: 0 0 30px -5px rgba(34, 211, 238, 0.3), inset 0 0 20px -10px rgba(34, 211, 238, 0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .btn-cosmic:hover::before {
+            left: 100%;
         }
 
         /* Bento Grid */
@@ -97,8 +113,6 @@
 
     <div class="fixed inset-0 z-[-10] pointer-events-none">
         <div class="absolute inset-0 bg-grid h-[80vh]"></div>
-        <!-- NEW BACKGROUND: Subtle Deep Current -->
-        <div class="deep-current blur-3xl mix-blend-screen"></div>
     </div>
 
     <!-- Navigation -->
@@ -153,22 +167,26 @@
         <!-- HERO SECTION -->
         <section class="relative w-full min-h-[90vh] flex flex-col items-center justify-center pt-20 overflow-hidden border-b border-white/5 bg-transparent">
             
-            <div class="absolute inset-0 pointer-events-none select-none z-0">
-                <div class="absolute inset-0 bg-grid opacity-[0.5]" style="mask-image: linear-gradient(to bottom, black 30%, transparent 95%);"></div>
-                <!-- FIXED TOP GRADIENT: Matches background color (#020405) to fade smoothly -->
-                <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#020405] via-[#020405]/80 to-transparent"></div>
-            </div>
-
-            <!-- SVG Map -->
-            <div class="absolute inset-x-0 bottom-0 h-full w-full z-1 pointer-events-none select-none mix-blend-screen" style="mask-image: linear-gradient(to bottom, transparent 0%, transparent 20%, black 80%);">
+            <!-- 1. THREE.JS STARS (Background Layer) -->
+            <div id="hero-stars" class="absolute inset-0 z-0"></div>
+            
+            <!-- 2. SVG MAP (Foreground Layer) -->
+            <!-- mix-blend-screen removed so the opaque fill can obscure stars behind it -->
+            <div class="absolute inset-x-0 bottom-0 h-full w-full z-1 pointer-events-none select-none" style="mask-image: linear-gradient(to bottom, transparent 0%, transparent 20%, black 80%);">
                 <svg class="w-full h-full min-w-[1000px] md:min-w-full absolute bottom-0 left-1/2 -translate-x-1/2" viewBox="0 0 1263 829" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
                     <defs>
                         <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                        <linearGradient id="land-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1" /><stop offset="60%" stop-color="#020405" stop-opacity="0.9" /><stop offset="100%" stop-color="#020405" stop-opacity="1" /></linearGradient>
+                        <!-- LAND FILL: Transition from deep cyan tint to solid background color to block stars -->
+                        <linearGradient id="land-fill" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#083344" /> <!-- Dark Cyan/Slate -->
+                            <stop offset="20%" stop-color="#020405" /> <!-- Fade to Solid BG quickly -->
+                            <stop offset="100%" stop-color="#020405" />
+                        </linearGradient>
                         <linearGradient id="green-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86efac" /><stop offset="100%" stop-color="#22c55e" /></linearGradient>
                     </defs>
                     <style>
-                        .cape-static { fill: url(#land-fill); stroke: #0e7490; stroke-width: 1px; opacity: 0.3; vector-effect: non-scaling-stroke; }
+                        /* Opacity increased to 1 to ensure it covers the stars */
+                        .cape-static { fill: url(#land-fill); stroke: #155e75; stroke-width: 1px; opacity: 1; vector-effect: non-scaling-stroke; }
                         .pulse-path { fill: none; stroke-width: 3px; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; filter: url(#neon-glow); opacity: 0; stroke-dasharray: 250 4000; }
                         .pulse-blue { stroke: #22d3ee; animation: move-right-to-left 8s ease-in-out infinite; }
                         @keyframes move-right-to-left { 0% { stroke-dashoffset: 250; opacity: 0; stroke-width: 2px; } 10% { opacity: 1; stroke-width: 5px; } 80% { opacity: 1; stroke-width: 2px; } 100% { stroke-dashoffset: -3500; opacity: 0; } }
@@ -185,6 +203,14 @@
                     <path d="M 1262 661 L 1223 640 L 1213 640 L 1205 637 L 1193 636 L 1161 619 L 1155 618 L 1159 621 L 1152 622 L 1145 617 L 1148 616 L 1147 614 L 1142 614 L 1140 611 L 1137 611 L 1134 580 L 1131 580 L 1131 616 L 1116 618 L 1111 622 L 1102 621 L 1096 624 L 1086 624 L 1084 627 L 1081 626 L 1081 629 L 1062 630 L 1060 632 L 1054 632 L 1052 635 L 1035 633 L 1032 640 L 1028 641 L 1027 644 L 1024 645 L 1024 648 L 1016 655 L 1017 658 L 1010 664 L 1010 667 L 1001 666 L 996 671 L 993 669 L 988 670 L 986 672 L 986 677 L 979 678 L 977 683 L 972 681 L 968 690 L 964 691 L 966 694 L 965 697 L 959 699 L 958 702 L 948 707 L 945 704 L 940 706 L 927 720 L 919 721 L 913 728 L 909 724 L 891 722 L 890 730 L 882 729 L 886 726 L 878 729 L 876 735 L 866 728 L 848 731 L 838 739 L 837 748 L 826 750 L 826 745 L 818 745 L 816 747 L 817 754 L 815 756 L 817 759 L 806 767 L 784 767 L 780 763 L 779 766 L 768 768 L 745 768 L 742 770 L 742 768 L 736 766 L 728 759 L 728 756 L 726 756 L 724 760 L 705 762 L 700 765 L 696 762 L 690 770 L 668 762 L 664 763 L 664 766 L 659 766 L 657 768 L 633 767 L 631 770 L 623 771 L 601 768 L 594 771 L 577 771 L 577 757 L 563 745 L 532 753 L 519 762 L 517 768 L 514 765 L 508 766 L 506 769 L 502 768 L 499 772 L 487 772 L 481 766 L 481 760 L 470 761 L 468 759 L 470 758 L 469 757 L 466 761 L 462 761 L 458 766 L 445 766 L 442 768 L 442 765 L 439 767 L 430 765 L 427 770 L 418 767 L 412 768 L 410 763 L 401 765 L 398 770 L 390 768 L 389 766 L 383 766 L 380 759 L 373 758 L 372 756 L 361 760 L 346 759 L 347 755 L 342 759 L 338 757 L 310 760 L 308 758 L 303 760 L 297 757 L 287 759 L 266 757 L 263 760 L 255 755 L 254 757 L 246 756 L 239 761 L 208 762 L 203 759 L 199 761 L 188 759 L 174 761 L 166 757 L 169 753 L 156 741 L 108 746 L 98 744 L 95 741 L 86 742 L 82 740 L 73 740 L 61 736 L 40 734 L 39 732 L 23 729 L 17 726 L 12 727 L 1 724" class="pulse-path pulse-green" />
                 </svg>
             </div>
+            
+            <!-- 3. GRADIENT OVERLAYS (Visual Polish) -->
+            <div class="absolute inset-0 pointer-events-none select-none z-1">
+                <!-- Top fade -->
+                <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#020405] to-transparent"></div>
+                <!-- Subtle Texture -->
+                <div class="absolute inset-0 bg-grid opacity-[0.3]" style="mask-image: radial-gradient(circle at center, transparent 0%, black 100%);"></div>
+            </div>
 
             <!-- CONTENT WRAPPER -->
             <div class="text-center max-w-5xl mx-auto space-y-8 relative z-20 px-4 md:px-6 -mt-44">
@@ -199,11 +225,11 @@
                     Based in St Just, we craft high-performance websites for Cornish businesses and global brands. Blending bold creativity with cutting-edge technology.
                 </p>
 
-                <div class="pt-6 flex flex-col items-center gap-4 animate-fade-up delay-200">
-                    <button class="group relative bg-white hover:bg-neutral-200 text-black text-base font-medium py-3 px-8 rounded-full flex items-center gap-2 transition-all shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_40px_-5px_rgba(255,255,255,0.6)] hover:-translate-y-1 overflow-hidden">
+                <!-- NEW CTA BUTTON -->
+                <div class="pt-8 flex flex-col items-center gap-4 animate-fade-up delay-200">
+                    <button class="btn-cosmic text-white text-base font-medium py-3.5 px-8 rounded-full flex items-center gap-3">
                         <span class="relative z-10 tracking-wide">START YOUR WEBSITE</span>
                         <i data-lucide="arrow-right" class="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
                     </button>
                     <p class="text-xs text-neutral-600 mt-1">Serving St Just, Penzance, St Ives & Beyond</p>
                 </div>
@@ -360,50 +386,50 @@
 
             <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Vortex Finance', 'Fintech Dashboard', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')">
+                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Vortex Finance', 'Fintech Dashboard', 'http://sunsetcampsite.com/cape/images/sunset.png')">
                     <div class="w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 border border-white/5 relative transition-all duration-500 group-hover:border-cyan-500/30 group-hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]">
                         <div class="absolute top-0 left-0 right-0 h-6 bg-[#020405]/90 border-b border-white/5 flex items-center px-3 gap-1.5 z-10 backdrop-blur-sm">
                             <div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&amp;w=2564&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
+                        <img src="http://sunsetcampsite.com/cape/images/sunset.png" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                             <span class="bg-white text-black px-4 py-2 rounded-full text-sm font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Case Study</span>
                         </div>
                     </div>
                     <div class="flex justify-between items-start px-1">
-                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-cyan-400 transition-colors">Vortex Finance</h3><p class="text-base text-neutral-500 font-light">Fintech Dashboard</p></div>
+                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3><p class="text-base text-neutral-500 font-light">Fintech Dashboard</p></div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="group relative flex flex-col gap-4 translate-y-0 md:translate-y-12 transition-transform duration-700 cursor-pointer" onclick="openModal('Mono Architecture', 'Minimalist Portfolio', 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop')">
+                <div class="group relative flex flex-col gap-4 translate-y-0 md:translate-y-12 transition-transform duration-700 cursor-pointer" onclick="openModal('Mono Architecture', 'Minimalist Portfolio', 'http://sunsetcampsite.com/cape/images/sunset.png')">
                     <div class="w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 border border-white/5 relative transition-all duration-500 group-hover:border-purple-500/30 group-hover:shadow-[0_0_30px_-10px_rgba(168,85,247,0.15)]">
                          <div class="absolute top-0 left-0 right-0 h-6 bg-[#020405]/90 border-b border-white/5 flex items-center px-3 gap-1.5 z-10 backdrop-blur-sm">
                             <div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&amp;w=2700&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
+                        <img src="http://sunsetcampsite.com/cape/images/sunset.png" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
                          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                             <span class="bg-white text-black px-4 py-2 rounded-full text-sm font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Case Study</span>
                         </div>
                     </div>
                     <div class="flex justify-between items-start px-1">
-                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-purple-400 transition-colors">Mono Architecture</h3><p class="text-base text-neutral-500 font-light">Minimalist Portfolio</p></div>
+                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3><p class="text-base text-neutral-500 font-light">Minimalist Portfolio</p></div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Lumina AI', 'SaaS Landing Page', 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2670&auto=format&fit=crop')">
+                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Lumina AI', 'SaaS Landing Page', 'http://sunsetcampsite.com/cape/images/sunset.png')">
                     <div class="w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 border border-white/5 relative transition-all duration-500 group-hover:border-green-500/30 group-hover:shadow-[0_0_30px_-10px_rgba(34,197,94,0.15)]">
                          <div class="absolute top-0 left-0 right-0 h-6 bg-[#020405]/90 border-b border-white/5 flex items-center px-3 gap-1.5 z-10 backdrop-blur-sm">
                             <div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
+                        <img src="http://sunsetcampsite.com/cape/images/sunset.png" class="w-full h-full object-cover pt-6 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] grayscale group-hover:grayscale-0">
                          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                             <span class="bg-white text-black px-4 py-2 rounded-full text-sm font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-300">View Case Study</span>
                         </div>
                     </div>
                     <div class="flex justify-between items-start px-1">
-                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-green-400 transition-colors">Lumina AI</h3><p class="text-base text-neutral-500 font-light">SaaS Landing Page</p></div>
+                        <div><h3 class="text-lg font-medium text-white tracking-tight group-hover:text-green-400 transition-colors">South West Metallurgical</h3><p class="text-base text-neutral-500 font-light">SaaS Landing Page</p></div>
                     </div>
                 </div>
             </div>
@@ -432,7 +458,7 @@
                      <p class="text-[10px] text-neutral-500 mt-2 max-w-[150px] leading-tight">We build fast sites that Google loves to rank.</p>
                 </div>
                 <div class="md:col-span-1 bento-card rounded-3xl relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0">
+                    <img src="http://sunsetcampsite.com/cape/images/sunset.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0">
                     <div class="absolute top-4 right-4 z-10 flex flex-col items-end">
                         <div class="flex items-center gap-1 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -607,6 +633,92 @@
         gsap.registerPlugin(ScrollTrigger);
         const textElements = document.querySelectorAll('.reveal-on-scroll');
         textElements.forEach(elem => { gsap.fromTo(elem, { opacity: 0.2, y: 20 }, { opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: elem, start: "top 80%", end: "top 50%", scrub: true } }); });
+        
+        // --- START NEW HERO THREE.JS LOGIC ---
+        function initHeroStars() {
+            const container = document.getElementById('hero-stars');
+            if(!container) return;
+
+            const scene = new THREE.Scene();
+            // Match background color of site so blending works
+            scene.background = new THREE.Color('#020405'); 
+            
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            // Create Stars
+            const starsGeometry = new THREE.BufferGeometry();
+            const starsCount = 3000;
+            const posArray = new Float32Array(starsCount * 3);
+            
+            for(let i = 0; i < starsCount * 3; i++) {
+                // Random positions scattered widely
+                posArray[i] = (Math.random() - 0.5) * 15;
+            }
+            
+            starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            
+            // Material
+            const starsMaterial = new THREE.PointsMaterial({
+                size: 0.015,
+                color: '#ffffff',
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+
+            const starField = new THREE.Points(starsGeometry, starsMaterial);
+            scene.add(starField);
+
+            // Interaction Variables
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - windowHalfX);
+                mouseY = (event.clientY - windowHalfY);
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                targetX = mouseX * 0.0001;
+                targetY = mouseY * 0.0001;
+
+                // Slow Rotation
+                starField.rotation.y += 0.0005;
+                starField.rotation.x += 0.0002;
+
+                // Mouse Parallax easing
+                starField.rotation.y += 0.05 * (targetX - starField.rotation.y);
+                starField.rotation.x += 0.05 * (targetY - starField.rotation.x);
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Resize handling
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+        initHeroStars();
+        // --- END HERO THREE.JS LOGIC ---
+
+
+        // FOOTER THREE.JS (Existing)
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
