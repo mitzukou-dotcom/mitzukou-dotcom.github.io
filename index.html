@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON HERE -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='white'/%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' fill='black' stroke='black' stroke-width='14'/%3E%3C/mask%3E%3C/defs%3E%3Cpath d='M50,20 L70,50 L50,80 L30,50 Z' stroke='white' stroke-width='8' mask='url(%23m)' /%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' stroke='%2322d3ee' stroke-width='8' /%3E%3C/svg%3E">
     
     <!-- SEO & Metadata -->
     <title>Cape Studios | Web Design Cornwall & St Just</title>
@@ -148,18 +151,60 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#020405]/95 backdrop-blur-xl transition-transform duration-300 translate-x-full flex flex-col justify-center items-center">
-             <button id="close-menu-btn" class="absolute top-8 right-8 p-2 text-white/50 hover:text-white">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
-            <nav class="flex flex-col gap-8 text-center">
-                <a href="#services" class="text-3xl font-medium text-white hover:text-cyan-400" onclick="closeMenu()">Services</a>
-                <a href="#process" class="text-3xl font-medium text-white hover:text-cyan-400" onclick="closeMenu()">Process</a>
-                <a href="#projects" class="text-3xl font-medium text-white hover:text-cyan-400" onclick="closeMenu()">Work</a>
-                <a href="#culture" class="text-3xl font-medium text-white hover:text-cyan-400" onclick="closeMenu()">Studio</a>
-                <a href="#contact" class="text-3xl font-medium text-cyan-400 hover:text-white" onclick="closeMenu()">Let's Talk</a>
-            </nav>
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#020405] transition-transform duration-500 ease-[cubic-bezier(0.32,0.725,0,1)] translate-x-full flex flex-col relative overflow-hidden">
+    
+    <!-- 1. Background Effects (Theme Integration) -->
+    <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+    
+    <!-- 2. Header: Logo & Close Button -->
+    <div class="flex items-center justify-between p-6 relative z-10 border-b border-white/5">
+        <span class="font-bold text-white tracking-tight text-lg">Cape Studios</span>
+        
+        <!-- CLOSE BUTTON (Styled & Prominent) -->
+        <button id="close-menu-btn" class="group flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-cyan-500/50 transition-all">
+            <span class="text-xs font-medium text-neutral-400 group-hover:text-white uppercase tracking-wider">Close</span>
+            <div class="relative w-6 h-6 flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
+                <i data-lucide="x" class="w-5 h-5 text-white"></i>
+            </div>
+        </button>
+    </div>
+
+    <!-- 3. Navigation Links -->
+    <nav class="flex-1 flex flex-col justify-center px-8 gap-6 relative z-10">
+        <a href="#services" class="group flex items-center justify-between text-4xl font-medium text-neutral-400 hover:text-white transition-colors font-display tracking-tight" onclick="closeMenu()">
+            <span class="group-hover:translate-x-4 transition-transform duration-300">Services</span>
+            <i data-lucide="arrow-right" class="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-cyan-400"></i>
+        </a>
+        <a href="#process" class="group flex items-center justify-between text-4xl font-medium text-neutral-400 hover:text-white transition-colors font-display tracking-tight" onclick="closeMenu()">
+            <span class="group-hover:translate-x-4 transition-transform duration-300">Process</span>
+            <i data-lucide="arrow-right" class="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-purple-400"></i>
+        </a>
+        <a href="#projects" class="group flex items-center justify-between text-4xl font-medium text-neutral-400 hover:text-white transition-colors font-display tracking-tight" onclick="closeMenu()">
+            <span class="group-hover:translate-x-4 transition-transform duration-300">Work</span>
+            <i data-lucide="arrow-right" class="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-green-400"></i>
+        </a>
+        <a href="#culture" class="group flex items-center justify-between text-4xl font-medium text-neutral-400 hover:text-white transition-colors font-display tracking-tight" onclick="closeMenu()">
+            <span class="group-hover:translate-x-4 transition-transform duration-300">Studio</span>
+            <i data-lucide="arrow-right" class="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-yellow-400"></i>
+        </a>
+    </nav>
+
+    <!-- 4. Menu Footer -->
+    <div class="p-8 border-t border-white/5 relative z-10 bg-[#020405]/50 backdrop-blur-sm">
+        <a href="#contact" onclick="closeMenu()" class="w-full mb-6 bg-white text-black font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-cyan-300 transition-colors">
+            Start Project <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </a>
+        <div class="flex justify-between items-center text-neutral-500 text-sm">
+            <span>hello@capestudios.co.uk</span>
+            <div class="flex gap-4">
+                <i data-lucide="instagram" class="w-5 h-5 hover:text-white transition-colors cursor-pointer"></i>
+                <i data-lucide="twitter" class="w-5 h-5 hover:text-white transition-colors cursor-pointer"></i>
+                <i data-lucide="linkedin" class="w-5 h-5 hover:text-white transition-colors cursor-pointer"></i>
+            </div>
         </div>
+    </div>
+</div>
     </header>
 
     <main class="flex-1 w-full">
@@ -213,7 +258,7 @@
             </div>
 
             <!-- CONTENT WRAPPER -->
-            <div class="text-center max-w-5xl mx-auto space-y-8 relative z-20 px-4 md:px-6 -mt-44">
+<div class="text-center max-w-5xl mx-auto space-y-8 relative z-20 px-4 md:px-6 mt-4 md:-mt-44">
                 
                 <h1 class="text-6xl md:text-7xl lg:text-8xl font-medium text-white tracking-tight leading-[0.95] md:leading-[0.9] animate-fade-up">
                     Cornwall's Premier<br>
@@ -231,7 +276,7 @@
                         <span class="relative z-10 tracking-wide">START YOUR WEBSITE</span>
                         <i data-lucide="arrow-right" class="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </button>
-                    <p class="text-xs text-neutral-600 mt-1">Serving St Just, Penzance, St Ives & Beyond</p>
+                    <p class="text-xs text-neutral-600 mt-32 md:mt-2">Serving St Just, Penzance, St Ives & Beyond</p>
                 </div>
             </div>
         </section>
@@ -386,7 +431,7 @@
 
             <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Vortex Finance', 'Fintech Dashboard', 'http://sunsetcampsite.com/cape/images/sunset.png&auto=format&fit=crop')">
+                <div class="group relative flex flex-col gap-4 cursor-pointer" onclick="openModal('Vortex Finance', 'Fintech Dashboard', 'http://sunsetcampsite.com/cape/images/sunset.png')">
                     <div class="w-full aspect-[4/3] overflow-hidden rounded-lg bg-neutral-900 border border-white/5 relative transition-all duration-500 group-hover:border-cyan-500/30 group-hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]">
                         <div class="absolute top-0 left-0 right-0 h-6 bg-[#020405]/90 border-b border-white/5 flex items-center px-3 gap-1.5 z-10 backdrop-blur-sm">
                             <div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div><div class="w-2 h-2 rounded-full bg-neutral-700"></div>
