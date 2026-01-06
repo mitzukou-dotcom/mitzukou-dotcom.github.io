@@ -184,21 +184,19 @@
             <div id="hero-stars" class="absolute inset-0 z-0"></div>
             
             <!-- 2. SVG MAP (Foreground Layer) -->
-            <!-- mix-blend-screen removed so the opaque fill can obscure stars behind it -->
             <div class="absolute inset-x-0 bottom-0 h-full w-full z-1 pointer-events-none select-none" style="mask-image: linear-gradient(to bottom, transparent 0%, transparent 20%, black 80%);">
                 <svg class="w-full h-full min-w-[1000px] md:min-w-full absolute bottom-0 left-1/2 -translate-x-1/2" viewBox="0 0 1263 829" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
                     <defs>
                         <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                        <!-- LAND FILL: Transition from deep cyan tint to solid background color to block stars -->
+                        <!-- LAND FILL -->
                         <linearGradient id="land-fill" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#083344" /> <!-- Dark Cyan/Slate -->
-                            <stop offset="20%" stop-color="#020405" /> <!-- Fade to Solid BG quickly -->
+                            <stop offset="0%" stop-color="#083344" />
+                            <stop offset="20%" stop-color="#020405" />
                             <stop offset="100%" stop-color="#020405" />
                         </linearGradient>
                         <linearGradient id="green-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86efac" /><stop offset="100%" stop-color="#22c55e" /></linearGradient>
                     </defs>
                     <style>
-                        /* Opacity increased to 1 to ensure it covers the stars */
                         .cape-static { fill: url(#land-fill); stroke: #155e75; stroke-width: 1px; opacity: 1; vector-effect: non-scaling-stroke; }
                         .pulse-path { fill: none; stroke-width: 3px; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; filter: url(#neon-glow); opacity: 0; stroke-dasharray: 250 4000; }
                         .pulse-blue { stroke: #22d3ee; animation: move-right-to-left 8s ease-in-out infinite; }
@@ -210,7 +208,6 @@
                     </style>
                     <!-- BACKGROUND MAP -->
                     <path d="M 0 828 L 1262 828 L 1262 661 L 1223 640 L 1213 640 L 1205 637 L 1193 636 L 1161 619 L 1155 618 L 1159 621 L 1152 622 L 1145 617 L 1148 616 L 1147 614 L 1142 614 L 1140 611 L 1137 611 L 1134 580 L 1131 580 L 1131 616 L 1116 618 L 1111 622 L 1102 621 L 1096 624 L 1086 624 L 1084 627 L 1081 626 L 1081 629 L 1062 630 L 1060 632 L 1054 632 L 1052 635 L 1035 633 L 1032 640 L 1028 641 L 1027 644 L 1024 645 L 1024 648 L 1016 655 L 1017 658 L 1010 664 L 1010 667 L 1001 666 L 996 671 L 993 669 L 988 670 L 986 672 L 986 677 L 979 678 L 977 683 L 972 681 L 968 690 L 964 691 L 966 694 L 965 697 L 959 699 L 958 702 L 948 707 L 945 704 L 940 706 L 927 720 L 919 721 L 913 728 L 909 724 L 891 722 L 890 730 L 882 729 L 886 726 L 878 729 L 876 735 L 866 728 L 848 731 L 838 739 L 837 748 L 826 750 L 826 745 L 818 745 L 816 747 L 817 754 L 815 756 L 817 759 L 806 767 L 784 767 L 780 763 L 779 766 L 768 768 L 745 768 L 742 770 L 742 768 L 736 766 L 728 759 L 728 756 L 726 756 L 724 760 L 705 762 L 700 765 L 696 762 L 690 770 L 668 762 L 664 763 L 664 766 L 659 766 L 657 768 L 633 767 L 631 770 L 623 771 L 601 768 L 594 771 L 577 771 L 577 757 L 563 745 L 532 753 L 519 762 L 517 768 L 514 765 L 508 766 L 506 769 L 502 768 L 499 772 L 487 772 L 481 766 L 481 760 L 470 761 L 468 759 L 470 758 L 469 757 L 466 761 L 462 761 L 458 766 L 445 766 L 442 768 L 442 765 L 439 767 L 430 765 L 427 770 L 418 767 L 412 768 L 410 763 L 401 765 L 398 770 L 390 768 L 389 766 L 383 766 L 380 759 L 373 758 L 372 756 L 361 760 L 346 759 L 347 755 L 342 759 L 338 757 L 310 760 L 308 758 L 303 760 L 297 757 L 287 759 L 266 757 L 263 760 L 255 755 L 254 757 L 246 756 L 239 761 L 208 762 L 203 759 L 199 761 L 188 759 L 174 761 L 166 757 L 169 753 L 156 741 L 108 746 L 98 744 L 95 741 L 86 742 L 82 740 L 73 740 L 61 736 L 40 734 L 39 732 L 23 729 L 17 726 L 12 727 L 1 724" class="cape-static" />
-                    <!-- BLUE PULSE -->
                     <path d="M 1262 661 L 1223 640 L 1213 640 L 1205 637 L 1193 636 L 1161 619 L 1155 618 L 1159 621 L 1152 622 L 1145 617 L 1148 616 L 1147 614 L 1142 614 L 1140 611 L 1137 611 L 1134 580 L 1131 580 L 1131 616 L 1116 618 L 1111 622 L 1102 621 L 1096 624 L 1086 624 L 1084 627 L 1081 626 L 1081 629 L 1062 630 L 1060 632 L 1054 632 L 1052 635 L 1035 633 L 1032 640 L 1028 641 L 1027 644 L 1024 645 L 1024 648 L 1016 655 L 1017 658 L 1010 664 L 1010 667 L 1001 666 L 996 671 L 993 669 L 988 670 L 986 672 L 986 677 L 979 678 L 977 683 L 972 681 L 968 690 L 964 691 L 966 694 L 965 697 L 959 699 L 958 702 L 948 707 L 945 704 L 940 706 L 927 720 L 919 721 L 913 728 L 909 724 L 891 722 L 890 730 L 882 729 L 886 726 L 878 729 L 876 735 L 866 728 L 848 731 L 838 739 L 837 748 L 826 750 L 826 745 L 818 745 L 816 747 L 817 754 L 815 756 L 817 759 L 806 767 L 784 767 L 780 763 L 779 766 L 768 768 L 745 768 L 742 770 L 742 768 L 736 766 L 728 759 L 728 756 L 726 756 L 724 760 L 705 762 L 700 765 L 696 762 L 690 770 L 668 762 L 664 763 L 664 766 L 659 766 L 657 768 L 633 767 L 631 770 L 623 771 L 601 768 L 594 771 L 577 771 L 577 757 L 563 745 L 532 753 L 519 762 L 517 768 L 514 765 L 508 766 L 506 769 L 502 768 L 499 772 L 487 772 L 481 766 L 481 760 L 470 761 L 468 759 L 470 758 L 469 757 L 466 761 L 462 761 L 458 766 L 445 766 L 442 768 L 442 765 L 439 767 L 430 765 L 427 770 L 418 767 L 412 768 L 410 763 L 401 765 L 398 770 L 390 768 L 389 766 L 383 766 L 380 759 L 373 758 L 372 756 L 361 760 L 346 759 L 347 755 L 342 759 L 338 757 L 310 760 L 308 758 L 303 760 L 297 757 L 287 759 L 266 757 L 263 760 L 255 755 L 254 757 L 246 756 L 239 761 L 208 762 L 203 759 L 199 761 L 188 759 L 174 761 L 166 757 L 169 753 L 156 741 L 108 746 L 98 744 L 95 741 L 86 742 L 82 740 L 73 740 L 61 736 L 40 734 L 39 732 L 23 729 L 17 726 L 12 727 L 1 724" class="pulse-path pulse-blue" />
                     <path d="M 1262 661 L 1223 640 L 1213 640 L 1205 637 L 1193 636 L 1161 619 L 1155 618 L 1159 621 L 1152 622 L 1145 617 L 1148 616 L 1147 614 L 1142 614 L 1140 611 L 1137 611 L 1134 580 L 1131 580 L 1131 616 L 1116 618 L 1111 622 L 1102 621 L 1096 624 L 1086 624 L 1084 627 L 1081 626 L 1081 629 L 1062 630 L 1060 632 L 1054 632 L 1052 635 L 1035 633 L 1032 640 L 1028 641 L 1027 644 L 1024 645 L 1024 648 L 1016 655 L 1017 658 L 1010 664 L 1010 667 L 1001 666 L 996 671 L 993 669 L 988 670 L 986 672 L 986 677 L 979 678 L 977 683 L 972 681 L 968 690 L 964 691 L 966 694 L 965 697 L 959 699 L 958 702 L 948 707 L 945 704 L 940 706 L 927 720 L 919 721 L 913 728 L 909 724 L 891 722 L 890 730 L 882 729 L 886 726 L 878 729 L 876 735 L 866 728 L 848 731 L 838 739 L 837 748 L 826 750 L 826 745 L 818 745 L 816 747 L 817 754 L 815 756 L 817 759 L 806 767 L 784 767 L 780 763 L 779 766 L 768 768 L 745 768 L 742 770 L 742 768 L 736 766 L 728 759 L 728 756 L 726 756 L 724 760 L 705 762 L 700 765 L 696 762 L 690 770 L 668 762 L 664 763 L 664 766 L 659 766 L 657 768 L 633 767 L 631 770 L 623 771 L 601 768 L 594 771 L 577 771 L 577 757 L 563 745 L 532 753 L 519 762 L 517 768 L 514 765 L 508 766 L 506 769 L 502 768 L 499 772 L 487 772 L 481 766 L 481 760 L 470 761 L 468 759 L 470 758 L 469 757 L 466 761 L 462 761 L 458 766 L 445 766 L 442 768 L 442 765 L 439 767 L 430 765 L 427 770 L 418 767 L 412 768 L 410 763 L 401 765 L 398 770 L 390 768 L 389 766 L 383 766 L 380 759 L 373 758 L 372 756 L 361 760 L 346 759 L 347 755 L 342 759 L 338 757 L 310 760 L 308 758 L 303 760 L 297 757 L 287 759 L 266 757 L 263 760 L 255 755 L 254 757 L 246 756 L 239 761 L 208 762 L 203 759 L 199 761 L 188 759 L 174 761 L 166 757 L 169 753 L 156 741 L 108 746 L 98 744 L 95 741 L 86 742 L 82 740 L 73 740 L 61 736 L 40 734 L 39 732 L 23 729 L 17 726 L 12 727 L 1 724" class="pulse-path pulse-pink" />
                     <path d="M 1262 661 L 1223 640 L 1213 640 L 1205 637 L 1193 636 L 1161 619 L 1155 618 L 1159 621 L 1152 622 L 1145 617 L 1148 616 L 1147 614 L 1142 614 L 1140 611 L 1137 611 L 1134 580 L 1131 580 L 1131 616 L 1116 618 L 1111 622 L 1102 621 L 1096 624 L 1086 624 L 1084 627 L 1081 626 L 1081 629 L 1062 630 L 1060 632 L 1054 632 L 1052 635 L 1035 633 L 1032 640 L 1028 641 L 1027 644 L 1024 645 L 1024 648 L 1016 655 L 1017 658 L 1010 664 L 1010 667 L 1001 666 L 996 671 L 993 669 L 988 670 L 986 672 L 986 677 L 979 678 L 977 683 L 972 681 L 968 690 L 964 691 L 966 694 L 965 697 L 959 699 L 958 702 L 948 707 L 945 704 L 940 706 L 927 720 L 919 721 L 913 728 L 909 724 L 891 722 L 890 730 L 882 729 L 886 726 L 878 729 L 876 735 L 866 728 L 848 731 L 838 739 L 837 748 L 826 750 L 826 745 L 818 745 L 816 747 L 817 754 L 815 756 L 817 759 L 806 767 L 784 767 L 780 763 L 779 766 L 768 768 L 745 768 L 742 770 L 742 768 L 736 766 L 728 759 L 728 756 L 726 756 L 724 760 L 705 762 L 700 765 L 696 762 L 690 770 L 668 762 L 664 763 L 664 766 L 659 766 L 657 768 L 633 767 L 631 770 L 623 771 L 601 768 L 594 771 L 577 771 L 577 757 L 563 745 L 532 753 L 519 762 L 517 768 L 514 765 L 508 766 L 506 769 L 502 768 L 499 772 L 487 772 L 481 766 L 481 760 L 470 761 L 468 759 L 470 758 L 469 757 L 466 761 L 462 761 L 458 766 L 445 766 L 442 768 L 442 765 L 439 767 L 430 765 L 427 770 L 418 767 L 412 768 L 410 763 L 401 765 L 398 770 L 390 768 L 389 766 L 383 766 L 380 759 L 373 758 L 372 756 L 361 760 L 346 759 L 347 755 L 342 759 L 338 757 L 310 760 L 308 758 L 303 760 L 297 757 L 287 759 L 266 757 L 263 760 L 255 755 L 254 757 L 246 756 L 239 761 L 208 762 L 203 759 L 199 761 L 188 759 L 174 761 L 166 757 L 169 753 L 156 741 L 108 746 L 98 744 L 95 741 L 86 742 L 82 740 L 73 740 L 61 736 L 40 734 L 39 732 L 23 729 L 17 726 L 12 727 L 1 724" class="pulse-path pulse-green" />
@@ -405,7 +402,7 @@
                     <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         
                         <!-- Image Area -->
-                        <div class="lg:col-span-7 relative cursor-pointer" onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop')">
+                        <div class="lg:col-span-7 relative cursor-pointer" onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')">
                             <!-- Glow Behind -->
                             <div class="absolute inset-0 bg-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 -z-10"></div>
                             
@@ -427,13 +424,13 @@
                                     <!-- Tech URL Bar -->
                                     <div class="flex-1 max-w-[300px] h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2 transition-colors group-hover:border-white/10">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-cyan-500/70"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>nova-finance.com</span>
+                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>sunsetcampsite.com</span>
                                     </div>
                                 </div>
 
                                 <!-- Image -->
                                 <div class="relative aspect-[16/10] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Nova Dashboard">
+                                    <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Nova Dashboard">
                                     <!-- Hover Overlay -->
                                     <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div class="bg-black/80 backdrop-blur-md border border-white/10 text-white px-6 py-2.5 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
@@ -447,20 +444,20 @@
 
                         <!-- Text Area -->
                         <div class="lg:col-span-5 space-y-6">
-                            <h3 class="text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors">Nova Fintech</h3>
+                            <h3 class="text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3>
                             <p class="text-neutral-400 leading-relaxed">
-                                A custom dashboard built for a financial firm. We focused on making complex data easy to read, ensuring their clients can check markets in real-time without confusion.
+                                A custom website built for a pop up campsite. We focused on creating an immersive, atmospheric experience that feels as wild and peaceful as the campsite itself—no clutter, just gorgeous text that paints pictures of the coast, stars, and freedom.
                             </p>
                             
                             <!-- Tech Stack Tags -->
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">React</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Interactive Charts</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Live Updates</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Minimalist design</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Atmospheric branding</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Nature-inspired web experience</span>
                             </div>
 
                             <div class="pt-4">
-                                <button onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop')" class="text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
+                                <button onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
                             </div>
                         </div>
                     </div>
@@ -470,25 +467,25 @@
                         
                         <!-- Text Area (Reordered) -->
                         <div class="order-2 lg:order-1 lg:col-span-5 space-y-6 lg:text-right flex flex-col items-start lg:items-end">
-                            <h3 class="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">Aether Interiors</h3>
+                            <h3 class="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3>
                             <p class="text-neutral-400 leading-relaxed text-left lg:text-right">
-                                A minimalist online store for a high-end furniture brand. Designed to showcase product quality and make the checkout process incredibly smooth to increase sales.
+                                A professional website for D Law Scaffolding Ltd, a trusted West Cornwall scaffolding specialist. Designed to highlight expertise, safety certifications, and real project examples while making it incredibly easy for clients to enquire and get quotes—building trust and driving leads in a competitive trade.
                             </p>
                             
                             <!-- Tech Stack Tags -->
                             <div class="flex flex-wrap gap-2 lg:justify-end">
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Shopify Plus</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Easy-to-Edit</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">3D Visuals</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Trust-building design</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Lead-generating layout</span>
+                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Professional trade presence</span>
                             </div>
 
                             <div class="pt-4">
-                                <button onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')" class="text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
+                                <button onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
                             </div>
                         </div>
 
                         <!-- Image Area -->
-                        <div class="order-1 lg:order-2 lg:col-span-7 relative cursor-pointer" onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')">
+                        <div class="order-1 lg:order-2 lg:col-span-7 relative cursor-pointer" onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')">
                              <!-- Glow Behind -->
                              <div class="absolute inset-0 bg-purple-500/20 blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 -z-10"></div>
 
@@ -507,13 +504,13 @@
                                     <!-- Tech URL Bar -->
                                     <div class="flex-1 max-w-[300px] h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2 transition-colors group-hover:border-white/10">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-purple-500/70"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>aether-living.com</span>
+                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>dlawscaffoldingltd.com</span>
                                     </div>
                                 </div>
                                 
                                 <!-- Image -->
                                 <div class="relative aspect-[16/10] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Aether Interiors">
+                                    <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Aether Interiors">
                                     <!-- Hover Overlay -->
                                     <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div class="bg-black/80 backdrop-blur-md border border-white/10 text-white px-6 py-2.5 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
@@ -800,7 +797,7 @@
         </section>
 
 <!-- PRICING SECTION -->
-<section class="py-24 border-b border-white/5 bg-[#020405] relative z-10">
+<section class="py-24 border-t border-b border-white/5 bg-gradient-to-b from-[#020405] to-[#06080a] relative z-10">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-medium text-white mb-4">Simple, Transparent Pricing</h2>
@@ -814,7 +811,7 @@
                 <div class="relative z-10">
                     <h3 class="text-xl text-white font-bold group-hover:text-cyan-400 transition-colors">Starter</h3>
                     <p class="text-neutral-500 text-sm mt-2">Essential presence for trades & shops.</p>
-                    <div class="my-6 text-3xl text-white font-medium">£1,495 <span class="text-sm text-neutral-500 font-normal">+ vat</span></div>
+                    <div class="my-6 text-3xl text-white font-medium">£1,495 <span class="text-sm text-neutral-500 font-normal">.00</span></div>
                     
                     <ul class="space-y-4 text-sm text-neutral-300 mb-8">
                         <li class="flex gap-3"><div class="mt-0.5 w-4 h-4 rounded-full bg-cyan-500/20 flex items-center justify-center"><i data-lucide="check" class="w-2.5 h-2.5 text-cyan-400"></i></div> 5 Page Brochure Website</li>
@@ -884,16 +881,18 @@
         
         <!-- OPTION 1: CAPE MANAGED (Highlighted) -->
         <div class="p-8 rounded-2xl bg-[#0d0f12] border border-cyan-500/30 relative overflow-hidden group">
+            <!-- New Hanging Tag (Matched Style) -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-cyan-500 text-black text-[10px] font-bold px-3 py-1 rounded-b-lg uppercase tracking-wider shadow-[0_0_15px_rgba(34,211,238,0.4)] z-20">
+                Recommended
+            </div>
+
             <!-- Glow Effect -->
             <div class="absolute inset-0 bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-colors"></div>
             
-            <div class="relative z-10 flex flex-col h-full">
+            <div class="relative z-10 flex flex-col h-full pt-4">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-xs font-bold text-cyan-400 mb-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> RECOMMENDED
-                        </div>
-                        <h4 class="text-white font-bold text-xl">Cape Managed</h4>
+                        <h4 class="text-white font-bold text-xl display-font">Cape Managed</h4>
                     </div>
                     <div class="text-right">
                         <div class="text-2xl text-white font-medium">£40 <span class="text-sm text-neutral-500">/mo</span></div>
@@ -916,11 +915,11 @@
         </div>
 
         <!-- OPTION 2: SELF MANAGED (Muted) -->
-        <div class="p-8 rounded-2xl bg-[#0d0f12] border border-white/5 relative overflow-hidden">
+        <div class="p-8 rounded-2xl bg-[#0d0f12] border border-white/5 relative overflow-hidden pt-12">
             <div class="relative z-10 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <h4 class="text-white font-bold text-xl">Self Managed</h4>
+                        <h4 class="text-white font-bold text-xl display-font">Self Managed</h4>
                     </div>
                     <div class="text-right">
                         <div class="text-2xl text-white font-medium">£0 <span class="text-sm text-neutral-500">/mo</span></div>
