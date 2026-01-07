@@ -389,153 +389,152 @@
         </section>
 
         <!-- PROJECTS -->
-        <section id="projects" class="relative w-full py-32 px-4 md:px-6 border-b border-white/5 overflow-hidden">
-            
-            <!-- Background Glow for Section -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<section id="projects" class="relative w-full py-32 px-4 md:px-6 border-b border-white/5 overflow-hidden">
+    
+    <!-- Background Glow for Section -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
-            <div class="max-w-7xl mx-auto relative z-10">
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-24 text-center max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-cyan-400 mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> SELECTED WORK
+            </div>
+            <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-6">Featured Case Studies</h2>
+            <p class="text-neutral-400 font-light text-lg">We don't just build websites; we build digital experiences. Here are two of our most recent deployments.</p>
+        </div>
+
+        <div class="flex flex-col gap-32">
+            
+            <!-- PROJECT 1: SUNSET CAMPSITE (Image Left) -->
+            <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Section Header -->
-                <div class="mb-24 text-center max-w-2xl mx-auto">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-cyan-400 mb-6">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> SELECTED WORK
+                <!-- Dual-Device Image Area -->
+                <div class="lg:col-span-7 relative cursor-pointer" onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')">
+                    
+                    <!-- Glow Behind -->
+                    <div class="absolute inset-0 bg-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 -z-10"></div>
+                    
+                    <!-- Container for Transforms -->
+                    <div class="relative h-[300px] md:h-[450px] w-full transition-transform duration-500 group-hover:-translate-y-2">
+                        
+                        <!-- 1. DESKTOP MOCKUP (Back / Left) -->
+                        <div class="absolute top-0 left-0 w-[85%] rounded-xl bg-[#0d0f12] border border-white/10 overflow-hidden shadow-2xl z-10">
+                            <!-- Browser Header -->
+                            <div class="h-8 md:h-10 bg-[#0d0f12] border-b border-white/5 flex items-center px-4 gap-4">
+                                <div class="flex gap-1.5">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                </div>
+                                <div class="flex-1 max-w-[300px] h-5 md:h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2">
+                                    <span class="text-[10px] text-neutral-500 font-mono">sunsetcampsite.com</span>
+                                </div>
+                            </div>
+                            <!-- Desktop Image -->
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="w-full h-full object-cover" alt="Sunset Campsite Desktop">
+                            </div>
+                        </div>
+
+                        <!-- 2. MOBILE MOCKUP (Front / Right) -->
+                        <div class="absolute bottom-0 right-0 w-[25%] md:w-[22%] z-20">
+                            <!-- Phone Frame -->
+                            <div class="relative rounded-[1.5rem] md:rounded-[2rem] bg-[#0d0f12] border-[4px] md:border-[6px] border-[#1a1a1a] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[9/19]">
+                                <!-- Notch -->
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-4 bg-[#1a1a1a] rounded-b-lg z-30"></div>
+                                <!-- Mobile Image (Place holder uses desktop image with object-cover) -->
+                                <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="w-full h-full object-cover" alt="Sunset Campsite Mobile">
+                            </div>
+                        </div>
+
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-6">Featured Case Studies</h2>
-                    <p class="text-neutral-400 font-light text-lg">We don't just build websites; we build digital experiences. Here are two of our most recent deployments.</p>
                 </div>
 
-                <div class="flex flex-col gap-32">
-                    
-                    <!-- PROJECT 1: NOVA FINTECH -->
-                    <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        
-                        <!-- Image Area -->
-                        <div class="lg:col-span-7 relative cursor-pointer" onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')">
-                            <!-- Glow Behind -->
-                            <div class="absolute inset-0 bg-cyan-500/20 blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 -z-10"></div>
-                            
-                            <!-- Browser Frame -->
-                            <div class="relative rounded-xl bg-[#0d0f12] border border-white/10 overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:border-cyan-500/30">
-                                <!-- Browser Header -->
-                                <div class="h-10 bg-[#0d0f12] border-b border-white/5 flex items-center px-4 gap-4">
-                                    
-                                    <!-- Custom "Tech" Window Controls -->
-                                    <div class="flex gap-2 group/controls">
-                                        <!-- Close -->
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                        <!-- Minimize -->
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                        <!-- Maximize -->
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                    </div>
-
-                                    <!-- Tech URL Bar -->
-                                    <div class="flex-1 max-w-[300px] h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2 transition-colors group-hover:border-white/10">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-cyan-500/70"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>sunsetcampsite.com</span>
-                                    </div>
-                                </div>
-
-                                <!-- Image -->
-                                <div class="relative aspect-[16/10] overflow-hidden">
-                                    <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Nova Dashboard">
-                                    <!-- Hover Overlay -->
-                                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <div class="bg-black/80 backdrop-blur-md border border-white/10 text-white px-6 py-2.5 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
-                                            <span>View Case Study</span>
-                                            <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text Area -->
-                        <div class="lg:col-span-5 space-y-6">
-                            <h3 class="text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3>
-                            <p class="text-neutral-400 leading-relaxed">
-                                A custom website built for a pop up campsite. We focused on creating an immersive, atmospheric experience that feels as wild and peaceful as the campsite itself—no clutter, just gorgeous text that paints pictures of the coast, stars, and freedom.
-                            </p>
-                            
-                            <!-- Tech Stack Tags -->
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Minimalist design</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Atmospheric branding</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Nature-inspired web experience</span>
-                            </div>
-
-                            <div class="pt-4">
-                                <button onclick="openModal('Nova Fintech', 'Financial Dashboard', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
-                            </div>
-                        </div>
+                <!-- Text Area -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3>
+                    <p class="text-neutral-400 leading-relaxed">
+                        A custom website built for a pop up campsite. We focused on creating an immersive, atmospheric experience that feels as wild and peaceful as the campsite itself.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Minimalist</span>
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Atmospheric</span>
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Booking UX</span>
                     </div>
-
-                    <!-- PROJECT 2: AETHER INTERIORS -->
-                    <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        
-                        <!-- Text Area (Reordered) -->
-                        <div class="order-2 lg:order-1 lg:col-span-5 space-y-6 lg:text-right flex flex-col items-start lg:items-end">
-                            <h3 class="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3>
-                            <p class="text-neutral-400 leading-relaxed text-left lg:text-right">
-                                A professional website for D Law Scaffolding Ltd, a trusted West Cornwall scaffolding specialist. Designed to highlight expertise, safety certifications, and real project examples while making it incredibly easy for clients to enquire and get quotes—building trust and driving leads in a competitive trade.
-                            </p>
-                            
-                            <!-- Tech Stack Tags -->
-                            <div class="flex flex-wrap gap-2 lg:justify-end">
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Trust-building design</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Lead-generating layout</span>
-                                <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Professional trade presence</span>
-                            </div>
-
-                            <div class="pt-4">
-                                <button onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
-                            </div>
-                        </div>
-
-                        <!-- Image Area -->
-                        <div class="order-1 lg:order-2 lg:col-span-7 relative cursor-pointer" onclick="openModal('Aether Interiors', 'eCommerce Design', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')">
-                             <!-- Glow Behind -->
-                             <div class="absolute inset-0 bg-purple-500/20 blur-3xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 -z-10"></div>
-
-                            <!-- Browser Frame -->
-                            <div class="relative rounded-xl bg-[#0d0f12] border border-white/10 overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/30">
-                                <!-- Browser Header -->
-                                <div class="h-10 bg-[#0d0f12] border-b border-white/5 flex items-center px-4 gap-4">
-                                    
-                                    <!-- Custom "Tech" Window Controls -->
-                                    <div class="flex gap-2 group/controls">
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                        <div class="w-2.5 h-2.5 rounded-full border border-white/10 bg-white/5 group-hover/controls:border-white/30 transition-colors"></div>
-                                    </div>
-
-                                    <!-- Tech URL Bar -->
-                                    <div class="flex-1 max-w-[300px] h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2 transition-colors group-hover:border-white/10">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-purple-500/70"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span class="text-[10px] text-neutral-500 font-mono tracking-wide"><span class="text-neutral-700">https://</span>dlawscaffoldingltd.com</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Image -->
-                                <div class="relative aspect-[16/10] overflow-hidden">
-                                    <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Aether Interiors">
-                                    <!-- Hover Overlay -->
-                                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <div class="bg-black/80 backdrop-blur-md border border-white/10 text-white px-6 py-2.5 rounded-full text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
-                                            <span>View Case Study</span>
-                                            <i data-lucide="arrow-right" class="w-4 h-4 text-purple-400"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="pt-4">
+                        <button onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
                     </div>
-
                 </div>
             </div>
-        </section>
+
+            <!-- PROJECT 2: D LAW SCAFFOLDING (Image Right) -->
+            <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Area (Left) -->
+                <div class="order-2 lg:order-1 lg:col-span-5 space-y-6 lg:text-right flex flex-col items-start lg:items-end">
+                    <h3 class="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3>
+                    <p class="text-neutral-400 leading-relaxed text-left lg:text-right">
+                        A professional website for a trusted West Cornwall scaffolding specialist. Designed to highlight expertise and safety certifications while driving leads.
+                    </p>
+                    <div class="flex flex-wrap gap-2 lg:justify-end">
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Lead Gen</span>
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Trade</span>
+                        <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Professional</span>
+                    </div>
+                    <div class="pt-4">
+                        <button onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')" class="text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold">Read the story</button>
+                    </div>
+                </div>
+
+                <!-- Dual-Device Image Area (Right) -->
+                <div class="order-1 lg:order-2 lg:col-span-7 relative cursor-pointer" onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')">
+                     
+                     <!-- Glow Behind -->
+                     <div class="absolute inset-0 bg-purple-500/20 blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 -z-10"></div>
+
+                    <!-- Container for Transforms -->
+                    <div class="relative h-[300px] md:h-[450px] w-full transition-transform duration-500 group-hover:-translate-y-2">
+                        
+                        <!-- 1. DESKTOP MOCKUP (Back / Right) -->
+                        <div class="absolute top-0 right-0 w-[85%] rounded-xl bg-[#0d0f12] border border-white/10 overflow-hidden shadow-2xl z-10">
+                            <!-- Browser Header -->
+                            <div class="h-8 md:h-10 bg-[#0d0f12] border-b border-white/5 flex items-center px-4 gap-4">
+                                <div class="flex gap-1.5">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                                </div>
+                                <div class="flex-1 max-w-[300px] h-5 md:h-6 bg-black/40 border border-white/5 rounded flex items-center px-3 gap-2">
+                                    <span class="text-[10px] text-neutral-500 font-mono">dlawscaffoldingltd.com</span>
+                                </div>
+                            </div>
+                            <!-- Desktop Image -->
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="w-full h-full object-cover" alt="D Law Desktop">
+                            </div>
+                        </div>
+
+                        <!-- 2. MOBILE MOCKUP (Front / Left) -->
+                        <div class="absolute bottom-0 left-0 w-[25%] md:w-[22%] z-20">
+                            <!-- Phone Frame -->
+                            <div class="relative rounded-[1.5rem] md:rounded-[2rem] bg-[#0d0f12] border-[4px] md:border-[6px] border-[#1a1a1a] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[9/19]">
+                                <!-- Notch -->
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-4 bg-[#1a1a1a] rounded-b-lg z-30"></div>
+                                <!-- Mobile Image (Place holder uses desktop image with object-cover) -->
+                                <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="w-full h-full object-cover" alt="D Law Mobile">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <!-- LOCAL REVIEWS SECTION -->
 <section class="py-24 border-b border-white/5 bg-[#020405] relative overflow-hidden">
