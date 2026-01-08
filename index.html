@@ -437,7 +437,8 @@
                                 <div class="absolute bottom-8 md:bottom-0 right-4 md:right-0 w-[25%] md:w-[24%] z-20 transition-transform duration-700 ease-out group-hover:-translate-y-6">
                                     <!-- Phone Frame -->
                                     <div class="relative rounded-[1.5rem] md:rounded-[2rem] bg-[#0d0f12] border-[2px] md:border-[6px] border-[#1a1a1a] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[9/19]">
-                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-5 bg-[#1a1a1a] rounded-b-lg z-30 flex items-center justify-center">
+                                        <!-- ADJUSTED NOTCH: Smaller on mobile -->
+                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-3 md:w-1/2 md:h-5 bg-[#1a1a1a] rounded-b-md md:rounded-b-lg z-30 flex items-center justify-center">
                                             <div class="w-1.5 h-1.5 rounded-full bg-[#2a2a2a]"></div> 
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-40"></div>
@@ -524,7 +525,8 @@
                                 <div class="absolute bottom-8 md:bottom-0 left-4 md:left-0 w-[25%] md:w-[24%] z-20 transition-transform duration-700 ease-out group-hover:-translate-y-6">
                                     <!-- Phone Frame -->
                                     <div class="relative rounded-[1.5rem] md:rounded-[2rem] bg-[#0d0f12] border-[2px] md:border-[6px] border-[#1a1a1a] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[9/19]">
-                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-5 bg-[#1a1a1a] rounded-b-lg z-30 flex items-center justify-center">
+                                        <!-- ADJUSTED NOTCH: Smaller on mobile -->
+                                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-3 md:w-1/2 md:h-5 bg-[#1a1a1a] rounded-b-md md:rounded-b-lg z-30 flex items-center justify-center">
                                             <div class="w-1.5 h-1.5 rounded-full bg-[#2a2a2a]"></div> 
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-40"></div>
@@ -1357,10 +1359,11 @@
             });
         }
 
-        // Init Logic (Only on Desktop to save battery)
+        // Init Logic (Modified for Mobile)
+        initHeroTerrain(); // ALWAYS run the hero wave now
+
         if (window.innerWidth > 768) {
-            initHeroTerrain();
-            initFooterCrystal();
+            initFooterCrystal(); // Keep footer crystal desktop only to save some battery
         }
     </script>
 </body>
