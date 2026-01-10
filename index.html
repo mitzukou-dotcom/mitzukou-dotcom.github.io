@@ -20,8 +20,8 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='14 14 72 72' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='white'/%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' fill='black' stroke='black' stroke-width='14'/%3E%3C/mask%3E%3C/defs%3E%3Cpath d='M50,20 L70,50 L50,80 L30,50 Z' stroke='white' stroke-width='8' mask='url(%23m)' /%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' stroke='%2322d3ee' stroke-width='8' /%3E%3C/svg%3E">    
     
     <!-- SEO & Metadata -->
-    <title>Cape Studios | Web Design Cornwall & St Just</title>
-    <meta name="description" content="Cape Studios offers bespoke web design and digital strategy in St Just, Cornwall. We build high-performance, stunning websites for local businesses and global brands.">
+    <title>Web Design Cornwall | Cape Studios | St Just & Penzance</title>
+    <meta name="description" content="Looking for Web Design in Cornwall? Cape Studios builds fast, stunning websites that rank high on Google. Based in St Just. Get a free quote today.">
     <meta name="keywords" content="Web Design Cornwall, Web Developer St Just, Website Design Penzance, Digital Agency Cornwall, Cape Studios, UX Design, SEO Cornwall">
     
     <!-- Scripts -->
@@ -153,6 +153,48 @@
             text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
     </style>
+
+<!-- SCHEMA MARKUP FOR LOCAL SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cape Studios",
+  "image": "https://capestudios.co.uk/favicon512.png", 
+  "description": "Premium web design and digital strategy based in St Just, Cornwall. Specializing in high-performance websites for local businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Your Street Address (Optional if home based)",
+    "addressLocality": "St Just",
+    "addressRegion": "Cornwall",
+    "postalCode": "TR19 7AA", 
+    "addressCountry": "UK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "50.1256", 
+    "longitude": "-5.6793"
+  },
+  "url": "https://capestudios.co.uk",
+  "telephone": "+447000000000",
+  "priceRange": "££",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ]
+}
+</script>
+
 </head>
 <body class="text-neutral-300 antialiased min-h-screen flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200 relative">
     
@@ -161,10 +203,11 @@
         <div class="absolute inset-0 bg-grid h-[80vh]"></div>
     </div>
 
-    <!-- Navigation -->
+  <!-- UPDATED HEADER & MOBILE MENU BLOCK -->
+
     <header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
         <div class="max-w-[1400px] mx-auto bg-[#020405]/70 backdrop-blur-xl border border-white/10 rounded-full h-16 flex items-center justify-between pl-4 pr-2 shadow-2xl shadow-black/50 transition-all duration-300 relative z-50">
-            <a href="#" class="flex items-center gap-3 group hover-trigger pl-2" aria-label="Cape Studios Home">
+            <a href="index.html" class="flex items-center gap-3 group hover-trigger pl-2" aria-label="Cape Studios Home">
                 <svg class="w-10 h-10 transition-transform duration-700 ease-out group-hover:rotate-180" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <defs><mask id="mask-header-logo"><rect width="100" height="100" fill="white"/><path d="M50,35 L80,50 L50,65 L20,50 Z" fill="black" stroke="black" stroke-width="14"/></mask></defs>
                     <path d="M50,20 L70,50 L50,80 L30,50 Z" stroke="white" stroke-width="8" mask="url(#mask-header-logo)" />
@@ -175,19 +218,17 @@
             
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-1">
-                <a href="#services" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Services</a>
-                <a href="#process" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Process</a>
-                <a href="#projects" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Work</a>
-                <a href="#studio" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Studio</a>
-                <a href="#pricing" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Pricing</a>
+                <a href="index.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Home</a>
+                <a href="index.html#services" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Services</a>
+                <a href="portfolio.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Work</a>
+                <a href="about.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">About</a>
+                <a href="index.html#pricing" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Pricing</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="#contact" class="hidden md:flex bg-white text-black hover:bg-cyan-300 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 items-center gap-2">
+                <a href="index.html#contact" class="hidden md:flex bg-white text-black hover:bg-cyan-300 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 items-center gap-2">
                     Let's Talk <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
                 </a>
-                
-                <!-- Mobile Menu Trigger -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
@@ -221,28 +262,28 @@
         <!-- Navigation Links -->
         <div class="flex-1 overflow-y-auto px-6 relative z-10 flex flex-col justify-center py-8">
             <nav class="flex flex-col w-full">
-                <!-- 01: Services -->
-                <a href="#services" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
-                    <span class="text-4xl font-light text-white group-hover:text-cyan-400 transition-colors tracking-tight">Services</span>
+                <!-- 01: Home -->
+                <a href="index.html" class="group flex items-center justify-between py-5 border-b border-white/5">
+                    <span class="text-4xl font-light text-white group-hover:text-cyan-400 transition-colors tracking-tight">Home</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-cyan-500/50 transition-colors">01</span>
                 </a>
-                <!-- 02: Process -->
-                <a href="#process" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
-                    <span class="text-4xl font-light text-white group-hover:text-purple-400 transition-colors tracking-tight">Process</span>
+                <!-- 02: Services -->
+                <a href="index.html#services" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
+                    <span class="text-4xl font-light text-white group-hover:text-purple-400 transition-colors tracking-tight">Services</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-purple-500/50 transition-colors">02</span>
                 </a>
                 <!-- 03: Work -->
-                <a href="#projects" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="portfolio.html" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-green-400 transition-colors tracking-tight">Work</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-green-500/50 transition-colors">03</span>
                 </a>
-                <!-- 04: Studio -->
-                <a href="#studio" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
-                    <span class="text-4xl font-light text-white group-hover:text-white transition-colors tracking-tight">Studio</span>
+                <!-- 04: About -->
+                <a href="about.html" class="group flex items-center justify-between py-5 border-b border-white/5">
+                    <span class="text-4xl font-light text-white group-hover:text-white transition-colors tracking-tight">About</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-white transition-colors">04</span>
                 </a>
                 <!-- 05: Pricing -->
-                <a href="#pricing" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="index.html#pricing" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-yellow-400 transition-colors tracking-tight">Pricing</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-yellow-500/50 transition-colors">05</span>
                 </a>
@@ -251,7 +292,7 @@
 
         <!-- Menu Footer -->
         <div class="p-6 border-t border-white/5 relative z-20 bg-[#020405]/80 backdrop-blur-md shrink-0 space-y-6">
-            <a href="#contact" onclick="closeMenu()" class="flex items-center justify-between w-full bg-cyan-500 text-black font-bold text-lg p-4 rounded-xl hover:bg-cyan-400 transition-colors">
+            <a href="index.html#contact" onclick="closeMenu()" class="flex items-center justify-between w-full bg-cyan-500 text-black font-bold text-lg p-4 rounded-xl hover:bg-cyan-400 transition-colors">
                 <span>Start a Project</span>
                 <div class="bg-black/10 p-1.5 rounded-full"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
             </a>
@@ -288,10 +329,11 @@
                     Studio
                 </h1>
             
-                <!-- ADJUSTMENT 1: Brighter text color (neutral-200) and removed font-light for better legibility against waves -->
-                <p class="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto font-normal leading-relaxed tracking-wide animate-fade-up delay-100 drop-shadow-lg">
-                    Based in St Just, we craft high-performance websites for Cornish businesses and global brands. Blending bold creativity with cutting-edge technology.
-                </p>
+
+<p class="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto font-normal leading-relaxed tracking-wide animate-fade-up delay-100 drop-shadow-lg">
+    Transform your local business with a world-class digital presence. 
+    Based in St Just, we build high-speed, lead-generating websites designed to grow your revenue.
+</p>
 
                 <!-- NEW CTA BUTTON SECTION -->
                 <div class="pt-8 flex flex-col items-center gap-6 animate-fade-up delay-200">
@@ -347,8 +389,8 @@
                 <!-- FIX: Changed items-end to items-start md:items-end -->
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-2">What we do</h2>
-                        <p class="text-neutral-500 font-light">Holistic digital solutions for modern brands.</p>
+                        <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-2">Build Your Digital Future</h2>
+                        <p class="text-neutral-500 font-light">Everything you need to dominate your market online.</p>
                     </div>
                     <a href="#" class="text-sm text-white border-b border-white/20 pb-0.5 hover:border-white transition-colors">View full capabilities</a>
                 </div>
@@ -359,7 +401,7 @@
                         <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="layout" class="w-24 h-24 text-white"></i></div>
                         <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500"><i data-lucide="monitor" class="w-6 h-6 text-cyan-400"></i></div>
                         <h3 class="text-xl font-medium text-white mb-3 relative z-10">Web Design</h3>
-                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">We architect pixel-perfect interfaces that balance aesthetics with usability. From landing pages to complex applications.</p>
+                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">Capture your audience instantly with pixel-perfect interfaces. You get a site that balances stunning aesthetics with seamless usability to turn visitors into customers.</p>
                         <ul class="mt-6 space-y-2 relative z-10">
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-cyan-500"></div> UI/UX Design</li>
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-cyan-500"></div> Interaction Design</li>
@@ -371,7 +413,7 @@
                          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="fingerprint" class="w-24 h-24 text-white"></i></div>
                         <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500"><i data-lucide="pen-tool" class="w-6 h-6 text-purple-400"></i></div>
                         <h3 class="text-xl font-medium text-white mb-3 relative z-10">Brand Identity</h3>
-                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">Crafting memorable visual narratives that resonate. We build coherent identity systems that stand the test of time.</p>
+                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">Stand out in a crowded market. We help you define a visual narrative that resonates with your specific audience and builds long-term loyalty.</p>
                          <ul class="mt-6 space-y-2 relative z-10">
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-purple-500"></div> Logo Design</li>
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-purple-500"></div> Brand Strategy</li>
@@ -382,8 +424,8 @@
                     <div class="spotlight-card group p-8 rounded-2xl bg-neutral-900/20 border border-white/5 relative overflow-hidden hover:bg-neutral-900/30 transition-colors" style="--spotlight-color: #4ade80;">
                          <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="megaphone" class="w-24 h-24 text-white"></i></div>
                         <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500"><i data-lucide="bar-chart-3" class="w-6 h-6 text-green-400"></i></div>
-                        <h3 class="text-xl font-medium text-white mb-3 relative z-10">Growth</h3>
-                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">Data-driven strategies to amplify your voice. We optimize conversion paths and manage campaigns.</p>
+                        <h3 class="text-xl font-medium text-white mb-3 relative z-10">Traffic & Growth</h3>
+                        <p class="text-neutral-400 font-light leading-relaxed text-sm relative z-10">Stop guessing and start growing. Utilizing data-driven SEO strategies, we ensure your business is found by the people actively searching for your services.</p>
                          <ul class="mt-6 space-y-2 relative z-10">
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-green-500"></div> SEO & Optimization</li>
                             <li class="flex items-center gap-2 text-xs text-neutral-500"><div class="w-1 h-1 rounded-full bg-green-500"></div> Content Strategy</li>
@@ -418,7 +460,7 @@
                             <i data-lucide="pencil-ruler" class="w-6 h-6 text-neutral-400 group-hover:text-purple-400 transition-colors"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">Design</h3>
-                        <p class="text-sm text-neutral-500 max-w-[200px]">We craft high-fidelity mockups that bring your vision to life before writing code.</p>
+                        <p class="text-sm text-neutral-500 max-w-[200px]">See your vision come to life with high-fidelity interactive prototypes before a single line of code is written.</p>
                     </div>
 
                     <!-- Step 3 -->
@@ -427,7 +469,7 @@
                             <i data-lucide="code" class="w-6 h-6 text-neutral-400 group-hover:text-green-400 transition-colors"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">Development</h3>
-                        <p class="text-sm text-neutral-500 max-w-[200px]">We build your site using clean, modern code optimized for speed and SEO.</p>
+                        <p class="text-sm text-neutral-500 max-w-[200px]">Your site is built using clean, modern code optimized for speed and SEO.</p>
                     </div>
 
                     <!-- Step 4 -->
@@ -436,13 +478,13 @@
                             <i data-lucide="rocket" class="w-6 h-6 text-neutral-400 group-hover:text-pink-400 transition-colors"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">Launch</h3>
-                        <p class="text-sm text-neutral-500 max-w-[200px]">We handle hosting, domain setup, and testing to ensure a flawless go-live.</p>
+                        <p class="text-sm text-neutral-500 max-w-[200px]">Complete peace of mind. We handle the technical setup, hosting, and domains so you can focus on running your business.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS -->
+       <!-- PROJECTS -->
         <section id="projects" class="relative w-full py-32 px-4 md:px-6 border-b border-white/5 overflow-hidden">
             
             <!-- Background Glow for Section -->
@@ -456,7 +498,7 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> SELECTED WORK
                     </div>
                     <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-6">Featured Case Studies</h2>
-                    <p class="text-neutral-400 font-light text-lg">We don't just build websites; we build digital experiences. Here are two of our most recent deployments.</p>
+                    <p class="text-neutral-400 font-light text-lg">Your business goals, realized. Here are two of our most recent deployments.</p>
                 </div>
 
                 <div class="flex flex-col gap-32">
@@ -492,7 +534,7 @@
                                     </div>
                                     <!-- Desktop Image -->
                                     <div class="relative aspect-[16/10] overflow-hidden">
-                                        <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Sunset Campsite Desktop">
+                                        <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Sunset Campsite Desktop">
                                     </div>
                                 </div>
 
@@ -505,7 +547,7 @@
                                             <div class="w-1.5 h-1.5 rounded-full bg-[#2a2a2a]"></div> 
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-40"></div>
-                                        <img src="https://sunsetcampsite.com/cape/images/sunsetmobile.webp" class="w-full h-full object-cover" alt="Sunset Campsite Mobile">
+                                        <img src="https://sunsetcampsite.com/cape/images/sunsetmobile.webp" loading="lazy" class="w-full h-full object-cover" alt="Sunset Campsite Mobile">
                                     </div>
                                 </div>
 
@@ -524,7 +566,7 @@
                                 <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-cyan-300 text-xs font-mono">Booking UX</span>
                             </div>
                             <div class="pt-4">
-                                <button onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')" class="group/btn text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold flex items-center gap-2">
+                                <button onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://sunsetcampsite.com/cape/images/sunsetthumb.webp')" loading="lazy" class="group/btn text-white border-b border-white/20 pb-1 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm uppercase tracking-widest font-bold flex items-center gap-2">
                                     Read the story <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform"></i>
                                 </button>
                             </div>
@@ -546,7 +588,7 @@
                                 <span class="px-3 py-1 rounded bg-[#0d0f12] border border-white/10 text-purple-300 text-xs font-mono">Professional</span>
                             </div>
                             <div class="pt-4">
-                                <button onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')" class="group/btn text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold flex items-center gap-2 lg:flex-row-reverse">
+                                <button onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://sunsetcampsite.com/cape/images/dlawthumb.webp')" loading="lazy" class="group/btn text-white border-b border-white/20 pb-1 hover:border-purple-400 hover:text-purple-400 transition-all text-sm uppercase tracking-widest font-bold flex items-center gap-2 lg:flex-row-reverse">
                                     Read the story <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover/btn:translate-x-1 lg:group-hover/btn:-translate-x-1 transition-transform"></i>
                                 </button>
                             </div>
@@ -580,7 +622,7 @@
                                     </div>
                                     <!-- Desktop Image -->
                                     <div class="relative aspect-[16/10] overflow-hidden">
-                                        <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="D Law Desktop">
+                                        <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="D Law Desktop">
                                     </div>
                                 </div>
 
@@ -593,7 +635,7 @@
                                             <div class="w-1.5 h-1.5 rounded-full bg-[#2a2a2a]"></div> 
                                         </div>
                                         <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-40"></div>
-                                        <img src="https://sunsetcampsite.com/cape/images/dlawmobile.webp" class="w-full h-full object-cover" alt="D Law Mobile">
+                                        <img src="https://sunsetcampsite.com/cape/images/dlawmobile.webp" loading="lazy" class="w-full h-full object-cover" alt="D Law Mobile">
                                     </div>
                                 </div>
 
