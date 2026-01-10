@@ -454,6 +454,26 @@
             });
         }
         initTerrain();
+
+        // Scroll to hash on page load (works cross-page too)
+  function scrollToHash() {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1); // remove #
+      const element = document.getElementById(id);
+      if (element) {
+        // Small delay helps if fonts/images are still loading
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // or 300 if needed for slower loads
+      }
+    }
+  }
+
+  // Run on initial load
+  window.addEventListener('load', scrollToHash);
+
+  // Also handle if user navigates back/forward with hash
+  window.addEventListener('hashchange', scrollToHash);
     </script>
 </body>
 </html>

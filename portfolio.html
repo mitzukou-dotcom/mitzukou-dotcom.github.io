@@ -496,7 +496,7 @@
         <div class="mt-40 border-t border-white/5 pt-20 pb-10">
             <div class="flex flex-col items-center gap-6 animate-fade-up">
                 <h2 class="text-3xl font-medium text-white text-center">Ready to be our next case study?</h2>
-                <a href="index.html#contact" class="btn-glass-cta text-base font-medium py-4 px-10 rounded-full flex items-center gap-3 group">
+                <a href="/#contact" class="btn-glass-cta text-base font-medium py-4 px-10 rounded-full flex items-center gap-3 group">
                     <span class="relative z-10 tracking-widest uppercase">Start A Project</span>
                     <i data-lucide="arrow-right" class="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform text-cyan-400"></i>
                 </a>
@@ -686,6 +686,26 @@
             });
         }
         initTerrain();
+
+        // Scroll to hash on page load (works cross-page too)
+  function scrollToHash() {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1); // remove #
+      const element = document.getElementById(id);
+      if (element) {
+        // Small delay helps if fonts/images are still loading
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // or 300 if needed for slower loads
+      }
+    }
+  }
+
+  // Run on initial load
+  window.addEventListener('load', scrollToHash);
+
+  // Also handle if user navigates back/forward with hash
+  window.addEventListener('hashchange', scrollToHash);
     </script>
 </body>
 </html>
