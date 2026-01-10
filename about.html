@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='14 14 72 72' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='white'/%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' fill='black' stroke='black' stroke-width='14'/%3E%3C/mask%3E%3C/defs%3E%3Cpath d='M50,20 L70,50 L50,80 L30,50 Z' stroke='white' stroke-width='8' mask='url(%23m)' /%3E%3Cpath d='M50,35 L80,50 L50,65 L20,50 Z' stroke='%2322d3ee' stroke-width='8' /%3E%3C/svg%3E">    
     
-    <title>About Tim | Cape Studios</title>
+    <title>About Us | Cape Studios | St Just, Cornwall</title>
     
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -244,22 +244,29 @@
                     </div>
                 </div>
 
-                <!-- Visual Column (Placeholder for Photo) -->
-                <div class="lg:col-span-5 relative animate-fade-up delay-100">
-                    <div class="profile-border rounded-3xl p-1">
-                        <div class="aspect-square bg-[#0d0f12] rounded-3xl border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                            <!-- Placeholder SVG Profile -->
-                            <div class="absolute inset-0 bg-grid opacity-20"></div>
-                            <svg class="w-32 h-32 text-neutral-800 group-hover:text-cyan-900/50 transition-colors duration-500" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                            </svg>
-                            <div class="absolute bottom-6 left-6 right-6 p-4 bg-black/50 backdrop-blur-md rounded-xl border border-white/5">
-                                <div class="text-white font-bold">Tim</div>
-                                <div class="text-cyan-400 text-xs font-mono">Founder & Lead Dev</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Visual Column (Photo/Profile Image) -->
+<div class="lg:col-span-5 relative animate-fade-up delay-100">
+    <div class="profile-border rounded-3xl p-1">
+        <div class="aspect-square bg-[#0d0f12] rounded-3xl border border-white/10 relative overflow-hidden">
+            <!-- Background subtle grid pattern -->
+            <div class="absolute inset-0 bg-grid opacity-20"></div>
+            
+            <!-- Actual profile photo -->
+            <img 
+                src="https://sunsetcampsite.com/cape/images/about.webp" 
+                alt="Tim Price - Founder & Lead Developer"
+                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+            >
+            
+            <!-- Overlay info card -->
+            <div class="absolute bottom-6 left-6 right-6 p-4 bg-black/50 backdrop-blur-md rounded-xl border border-white/5">
+                <div class="text-white font-bold">Tim</div>
+                <div class="text-cyan-400 text-xs font-mono">Founder & Lead Dev</div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
 
             <!-- ROW 2: THE PHILOSOPHY CARDS -->
