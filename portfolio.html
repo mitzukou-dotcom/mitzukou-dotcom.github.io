@@ -201,205 +201,227 @@
         <div class="max-w-[1400px] mx-auto px-4 md:px-6">
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
                 
-                <!-- 1. SUNSET CAMPSITE (Cyan) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #22d3ee; --shadow-color: 34, 211, 238;" onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-cyan-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3><p class="text-neutral-500 mt-1 font-light">Booking Platform • Strategy</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-cyan-500 group-hover:text-black group-hover:border-cyan-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 1. SUNSET CAMPSITE (Cyan) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #22d3ee; --shadow-color: 34, 211, 238;" onclick="openModal('Sunset Campsite', 'Nature Tourism', 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <!-- FLEX FIX: Added flex and flex-col to separate the bar from the image perfectly -->
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <!-- Switched back to object-cover with object-top to fill the gaps -->
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/sunsetthumb.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/sunsetmobile.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-cyan-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-cyan-400 transition-colors">Sunset Campsite</h3><p class="text-neutral-500 mt-1 font-light">Booking Platform • Strategy</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-cyan-500 group-hover:text-black group-hover:border-cyan-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 2. D LAW SCAFFOLDING (Purple) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #c084fc; --shadow-color: 192, 132, 252;" onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-purple-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3><p class="text-neutral-500 mt-1 font-light">Lead Generation • Identity</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-black group-hover:border-purple-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 2. D LAW SCAFFOLDING (Purple) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #c084fc; --shadow-color: 192, 132, 252;" onclick="openModal('D Law Scaffolding', 'Trade Services', 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/dlawthumb.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/dlawmobile.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-purple-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-purple-400 transition-colors">D Law Scaffolding</h3><p class="text-neutral-500 mt-1 font-light">Lead Generation • Identity</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-black group-hover:border-purple-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 3. THE COVE CAFE (Green) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="brand" style="--glow-color: #4ade80; --shadow-color: 74, 222, 128;" onclick="openModal('The Cove Cafe', 'Hospitality', 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-green-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-green-400 transition-colors">The Cove Cafe</h3><p class="text-neutral-500 mt-1 font-light">Rebranding • Digital Menu</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green-500 group-hover:text-black group-hover:border-green-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 3. THE COVE CAFE (Green) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="brand" style="--glow-color: #4ade80; --shadow-color: 74, 222, 128;" onclick="openModal('The Cove Cafe', 'Hospitality', 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/covecafe.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/covecafe.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-green-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-green-400 transition-colors">The Cove Cafe</h3><p class="text-neutral-500 mt-1 font-light">Rebranding • Digital Menu</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green-500 group-hover:text-black group-hover:border-green-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 4. PENZANCE POTTERY (Orange) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="commerce" style="--glow-color: #fb923c; --shadow-color: 251, 146, 60;" onclick="openModal('Penzance Pottery', 'eCommerce', 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1493106819501-66d381c466f1?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-orange-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-orange-400 transition-colors">Penzance Pottery</h3><p class="text-neutral-500 mt-1 font-light">Shopify • Global Sales</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-black group-hover:border-orange-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 4. PENZANCE POTTERY (Orange) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="commerce" style="--glow-color: #fb923c; --shadow-color: 251, 146, 60;" onclick="openModal('Penzance Pottery', 'eCommerce', 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/pzpottery.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/pzpottery.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-orange-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-orange-400 transition-colors">Penzance Pottery</h3><p class="text-neutral-500 mt-1 font-light">Shopify • Global Sales</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-black group-hover:border-orange-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 5. MINING MUSEUM (Yellow) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #facc15; --shadow-color: 250, 204, 21;" onclick="openModal('Mining Museum', 'Culture', 'https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-yellow-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-yellow-400 transition-colors">Mining Museum</h3><p class="text-neutral-500 mt-1 font-light">Interactive Timeline • Tickets</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 5. BOTANICAL ST IVES (Yellow) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #facc15; --shadow-color: 250, 204, 21;" onclick="openModal('Mining Museum', 'Culture', 'https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/botstives.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/botstives.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-yellow-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-yellow-400 transition-colors">Botanical St Ives</h3><p class="text-neutral-500 mt-1 font-light">Interactive Timeline • Tickets</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 6. CORNISH SURF (Blue) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #60a5fa; --shadow-color: 96, 165, 250;" onclick="openModal('Cornish Surf', 'Sport', 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1505459668311-8dfac7952de0?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-blue-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-blue-400 transition-colors">Cornish Surf</h3><p class="text-neutral-500 mt-1 font-light">Booking System • Rentals</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-black group-hover:border-blue-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 6. TIN COAST SURF SCHOOL (Blue) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #60a5fa; --shadow-color: 96, 165, 250;" onclick="openModal('Cornish Surf', 'Sport', 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/tincoastsurf.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/tincoastsurf.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-blue-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-blue-400 transition-colors">Tin Coast Surf School</h3><p class="text-neutral-500 mt-1 font-light">Booking System • Rentals</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-black group-hover:border-blue-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                 <!-- 7. TREGENNA ESTATES (Slate) -->
-                 <div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #94a3b8; --shadow-color: 148, 163, 184;" onclick="openModal('Tregenna Estates', 'Real Estate', 'https://images.unsplash.com/photo-1600596542815-2a4d9f0152ba?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1600596542815-2a4d9f0152ba?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-slate-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-slate-400 transition-colors">Tregenna Estates</h3><p class="text-neutral-500 mt-1 font-light">Real Estate • Virtual Tours</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-slate-500 group-hover:text-black group-hover:border-slate-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 7. LANDS END LODGE (Slate) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #94a3b8; --shadow-color: 148, 163, 184;" onclick="openModal('Tregenna Estates', 'Real Estate', 'https://images.unsplash.com/photo-1600596542815-2a4d9f0152ba?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/landsendlodge.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/landsendlodge.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-slate-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-slate-400 transition-colors">Lands End Lodge</h3><p class="text-neutral-500 mt-1 font-light">Real Estate • Virtual Tours</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-slate-500 group-hover:text-black group-hover:border-slate-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 8. BOTALLACK DISTILLERY (Amber) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="brand" style="--glow-color: #f59e0b; --shadow-color: 245, 158, 11;" onclick="openModal('Botallack Distillery', 'Food & Drink', 'https://images.unsplash.com/photo-1598155523122-38423bb4d6c1?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1598155523122-38423bb4d6c1?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1574495573489-35431d16be99?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-amber-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-amber-400 transition-colors">Botallack Distillery</h3><p class="text-neutral-500 mt-1 font-light">Label Design • Brand Story</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 8. MOUSEHOLE DISTILLERY (Amber) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="brand" style="--glow-color: #f59e0b; --shadow-color: 245, 158, 11;" onclick="openModal('Botallack Distillery', 'Food & Drink', 'https://images.unsplash.com/photo-1598155523122-38423bb4d6c1?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/mousedist.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/mousedist.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-amber-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-amber-400 transition-colors">Mousehold Distillery</h3><p class="text-neutral-500 mt-1 font-light">Label Design • Brand Story</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 9. WEST PENWITH YOGA (Pink) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #ec4899; --shadow-color: 236, 72, 153;" onclick="openModal('West Penwith Yoga', 'Health', 'https://images.unsplash.com/photo-1544367563-121910aa662f?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1544367563-121910aa662f?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1599447421405-0c1741427447?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-pink-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-pink-400 transition-colors">West Penwith Yoga</h3><p class="text-neutral-500 mt-1 font-light">Membership Portal • VOD</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-pink-500 group-hover:text-black group-hover:border-pink-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 9. WEST PENWITH YOGA (Pink) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up" data-category="web" style="--glow-color: #ec4899; --shadow-color: 236, 72, 153;" onclick="openModal('West Penwith Yoga', 'Health', 'https://images.unsplash.com/photo-1544367563-121910aa662f?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/westpenyoga.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/westpenyoga.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-pink-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-pink-400 transition-colors">West Penwith Yoga</h3><p class="text-neutral-500 mt-1 font-light">Membership Portal • VOD</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-pink-500 group-hover:text-black group-hover:border-pink-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
-                <!-- 10. KERNOW LOGISTICS (Red) -->
-                <div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #ef4444; --shadow-color: 239, 68, 68;" onclick="openModal('Kernow Logistics', 'B2B', 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop')">
-                    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
-                    <div class="relative w-full aspect-[16/11]">
-                        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                             <div class="h-6 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
-                             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover">
-                             <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        </div>
-                        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[28%] aspect-[9/19] overflow-hidden">
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
-                            <img src="https://images.unsplash.com/photo-1629904853716-6c29f63557d3?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover rounded-[1.5rem]">
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-red-500/50 transition-colors">
-                        <div><h3 class="text-3xl font-medium text-white group-hover:text-red-400 transition-colors">Kernow Logistics</h3><p class="text-neutral-500 mt-1 font-light">Client Dashboard • Tracking</p></div>
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-red-500 group-hover:text-black group-hover:border-red-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                    </div>
-                </div>
+<!-- 10. KERNOW LOGISTICS (Red) -->
+<div class="group relative cursor-pointer perspective-container animate-fade-up md:mt-24" data-category="web" style="--glow-color: #ef4444; --shadow-color: 239, 68, 68;" onclick="openModal('Kernow Logistics', 'B2B', 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop')">
+    <div class="absolute inset-0 -z-10 ambient-spot blur-[90px] rounded-full scale-125"></div>
+    <div class="relative w-full aspect-[16/9]">
+        <div class="mockup-desktop absolute inset-0 rounded-xl overflow-hidden border border-white/10 bg-[#1a1a1a] flex flex-col">
+             <div class="h-6 shrink-0 bg-[#0a0c10] border-b border-white/5 flex items-center px-4 gap-1.5"><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div><div class="w-2 h-2 rounded-full bg-white/20"></div></div>
+             <div class="relative flex-1 min-h-0 w-full">
+                <img src="https://sunsetcampsite.com/cape/images/portfolio/kernowlog.webp" class="absolute inset-0 w-full h-full object-cover object-top" alt="Sunset campsite preview">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+             </div>
+        </div>
+        <div class="mockup-mobile absolute -bottom-6 -right-2 md:-right-6 w-[22%] aspect-[9/19] overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-4 bg-[#121212] rounded-b-lg z-30"></div>
+            <img src="https://sunsetcampsite.com/cape/images/portfolio/kernowlog.webp" class="w-full h-full object-cover object-top rounded-[1.5rem]" >
+        </div>
+    </div>
+    <div class="mt-10 flex justify-between items-end border-b border-white/5 pb-4 group-hover:border-red-500/50 transition-colors">
+        <div><h3 class="text-3xl font-medium text-white group-hover:text-red-400 transition-colors">Kernow Logistics</h3><p class="text-neutral-500 mt-1 font-light">Client Dashboard • Tracking</p></div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-red-500 group-hover:text-black group-hover:border-red-500 transition-all"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+    </div>
+</div>
 
             </div>
         </div>
