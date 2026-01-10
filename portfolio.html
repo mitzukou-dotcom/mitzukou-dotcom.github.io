@@ -130,12 +130,11 @@
     <!-- Bottom Fade -->
     <div class="fixed inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020405] via-[#020405]/80 to-transparent pointer-events-none z-[-5]"></div>
 
-    <!-- Navigation -->
-<!-- UPDATED HEADER & MOBILE MENU BLOCK -->
+  <!-- Navigation -->
 
     <header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
         <div class="max-w-[1400px] mx-auto bg-[#020405]/70 backdrop-blur-xl border border-white/10 rounded-full h-16 flex items-center justify-between pl-4 pr-2 shadow-2xl shadow-black/50 transition-all duration-300 relative z-50">
-            <a href="index.html" class="flex items-center gap-3 group hover-trigger pl-2" aria-label="Cape Studios Home">
+            <a href="/" class="flex items-center gap-3 group hover-trigger pl-2" aria-label="Cape Studios Home">
                 <svg class="w-10 h-10 transition-transform duration-700 ease-out group-hover:rotate-180" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <defs><mask id="mask-header-logo"><rect width="100" height="100" fill="white"/><path d="M50,35 L80,50 L50,65 L20,50 Z" fill="black" stroke="black" stroke-width="14"/></mask></defs>
                     <path d="M50,20 L70,50 L50,80 L30,50 Z" stroke="white" stroke-width="8" mask="url(#mask-header-logo)" />
@@ -146,15 +145,15 @@
             
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-1">
-                <a href="index.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Home</a>
-                <a href="index.html#services" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Services</a>
-                <a href="portfolio.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Work</a>
-                <a href="about.html" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">About</a>
-                <a href="index.html#pricing" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Pricing</a>
+                <a href="/" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Home</a>
+                <a href="/#services" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Services</a>
+                <a href="portfolio" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Work</a>
+                <a href="about" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">About</a>
+                <a href="/#pricing" class="px-5 py-2 text-sm text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-white/5">Pricing</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="index.html#contact" class="hidden md:flex bg-white text-black hover:bg-cyan-300 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 items-center gap-2">
+                <a href="/#contact" class="hidden md:flex bg-white text-black hover:bg-cyan-300 px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 items-center gap-2">
                     Let's Talk <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
                 </a>
                 <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:bg-white/10 rounded-full transition-colors">
@@ -191,27 +190,27 @@
         <div class="flex-1 overflow-y-auto px-6 relative z-10 flex flex-col justify-center py-8">
             <nav class="flex flex-col w-full">
                 <!-- 01: Home -->
-                <a href="index.html" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="/" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-cyan-400 transition-colors tracking-tight">Home</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-cyan-500/50 transition-colors">01</span>
                 </a>
                 <!-- 02: Services -->
-                <a href="index.html#services" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="/#services" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-purple-400 transition-colors tracking-tight">Services</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-purple-500/50 transition-colors">02</span>
                 </a>
                 <!-- 03: Work -->
-                <a href="portfolio.html" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="portfolio" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-green-400 transition-colors tracking-tight">Work</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-green-500/50 transition-colors">03</span>
                 </a>
                 <!-- 04: About -->
-                <a href="about.html" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="about" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-white transition-colors tracking-tight">About</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-white transition-colors">04</span>
                 </a>
                 <!-- 05: Pricing -->
-                <a href="index.html#pricing" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
+                <a href="/#pricing" onclick="closeMenu()" class="group flex items-center justify-between py-5 border-b border-white/5">
                     <span class="text-4xl font-light text-white group-hover:text-yellow-400 transition-colors tracking-tight">Pricing</span>
                     <span class="text-xs font-mono text-neutral-700 group-hover:text-yellow-500/50 transition-colors">05</span>
                 </a>
@@ -220,7 +219,7 @@
 
         <!-- Menu Footer -->
         <div class="p-6 border-t border-white/5 relative z-20 bg-[#020405]/80 backdrop-blur-md shrink-0 space-y-6">
-            <a href="index.html#contact" onclick="closeMenu()" class="flex items-center justify-between w-full bg-cyan-500 text-black font-bold text-lg p-4 rounded-xl hover:bg-cyan-400 transition-colors">
+            <a href="/#contact" onclick="closeMenu()" class="flex items-center justify-between w-full bg-cyan-500 text-black font-bold text-lg p-4 rounded-xl hover:bg-cyan-400 transition-colors">
                 <span>Start a Project</span>
                 <div class="bg-black/10 p-1.5 rounded-full"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
             </a>
