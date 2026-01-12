@@ -51,6 +51,23 @@
         .lenis.lenis-stopped { overflow: hidden; }
         .lenis.lenis-scrolling iframe { pointer-events: none; }
 
+        /* Disable hover effects during active scrolling to prevent jitter */
+        .lenis.lenis-scrolling .spotlight-card,
+        .lenis.lenis-scrolling .btn-glass-cta {
+        pointer-events: none;
+        }
+
+        /* Prevent layout shifts on the modal */
+        .modal-content {
+         will-change: transform, opacity;
+         backface-visibility: hidden;
+        }
+
+        /* Ensure the body doesn't shift when Lenis stops */
+        html.lenis-stopped {
+        overflow: hidden;
+        }
+
         body { font-family: 'Inter', sans-serif; background-color: #020405; overflow-x: clip; overflow-y: visible; }
         h1, h2, h3, .display-font { font-family: 'Space Grotesk', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
@@ -166,6 +183,43 @@
         .hero-text-shadow {
             text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
+
+/* CONSOLIDATED MOBILE SPOTLIGHT ENHANCEMENTS */
+@media (max-width: 1024px) {
+    /* 1. Constant visibility and breathing effect for all spotlight cards on mobile */
+    .spotlight-card::before {
+        opacity: 0.7; 
+        animation: spotlight-breathe 4s ease-in-out infinite alternate;
+    }
+
+    /* 2. SERVICES SECTION POSITIONS */
+    /* Web Design: Top Left */
+    #cards-container > div:nth-child(1) { --mouse-x: 0%; --mouse-y: 0%; }
+    /* Brand Identity: Bottom Left */
+    #cards-container > div:nth-child(2) { --mouse-x: 0%; --mouse-y: 100%; }
+    /* Traffic & Growth: Center Right */
+    #cards-container > div:nth-child(3) { --mouse-x: 100%; --mouse-y: 50%; }
+
+    /* 3. PRICING SECTION POSITIONS */
+    /* Essential: Top Right */
+    #pricing-container > div:nth-child(1) { --mouse-x: 100%; --mouse-y: 0%; }
+    /* Boost (Popular): Center Bottom */
+    #pricing-container > div:nth-child(2) { --mouse-x: 50%; --mouse-y: 100%; }
+    /* Custom: Top Left */
+    #pricing-container > div:nth-child(3) { --mouse-x: 0%; --mouse-y: 0%; }
+}
+
+/* 4. THE ANIMATION (Using blur + opacity for a high-end feel) */
+@keyframes spotlight-breathe {
+    from { 
+        opacity: 0.4; 
+        filter: blur(2px);
+    }
+    to { 
+        opacity: 0.8; 
+        filter: blur(0px);
+    }
+}
     </style>
 
 <!-- SCHEMA MARKUP FOR LOCAL SEO -->
@@ -1305,17 +1359,19 @@
             });
         });
 
-        // 3. SPOTLIGHT HOVER EFFECT
-        const spotlightCards = document.querySelectorAll('.spotlight-card');
-        document.addEventListener('mousemove', (e) => {
-            spotlightCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
+// 3. OPTIMIZED SPOTLIGHT HOVER EFFECT
+const spotlightCards = document.querySelectorAll('.spotlight-card');
+
+spotlightCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        // Only calculate rect when mouse is actually over the card
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
 
         // 4. SCROLL ANIMATIONS
         gsap.registerPlugin(ScrollTrigger);
@@ -1357,65 +1413,51 @@
         const modalSubtitle = document.getElementById('modal-subtitle');
         const modalImage = document.getElementById('modal-image');
         
-        function openModal(title, subtitle, image) {
-            if(!modal) return;
-            
-            // Populate Data
-            modalTitle.innerText = title;
-            modalSubtitle.innerText = subtitle;
-            modalImage.src = image;
-            
-            // Show & Lock
-            modal.classList.remove('hidden');
-            lenis.stop();
-            document.body.style.overflow = 'hidden';
+function openModal(title, subtitle, image) {
+    if(!modal) return;
+    
+    // 1. Reset scroll velocity before stopping
+    lenis.scrollTo(window.scrollY, { immediate: true });
+    lenis.stop();
+    
+    modalTitle.innerText = title;
+    modalSubtitle.innerText = subtitle;
+    modalImage.src = image;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
 
-            // Animation Sequence
-            // A. Overlay fades in
-            gsap.fromTo(".modal-overlay", { opacity: 0 }, { opacity: 1, duration: 0.4 });
-            
-            // B. Box Pops in
-            gsap.fromTo(".modal-content", 
-                { opacity: 0, scale: 0.95, y: 20 }, 
-                { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.2)" }
-            );
+    // 2. Animation Sequence
+    gsap.fromTo(".modal-overlay", { opacity: 0 }, { opacity: 1, duration: 0.4 });
+    gsap.fromTo(".modal-content", 
+        { opacity: 0, scale: 0.9, y: 30 }, 
+        { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "power4.out", clearProps: "all" }
+    );
 
-            // C. Image Reset
-            gsap.set("#modal-image", { opacity: 1 });
+    gsap.fromTo(".modal-anim-elem", 
+        { opacity: 0, y: 15 }, 
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, delay: 0.1 }
+    );
+}
 
-            // D. Stagger Text Elements
-            gsap.fromTo(".modal-anim-elem", 
-                { opacity: 0, y: 15 }, 
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 0.5, 
-                    stagger: 0.1, 
-                    delay: 0.2, 
-                    ease: "power2.out"
-                }
-            );
-        }
-        
-        function closeModal() {
-            if(!modal) return;
-            gsap.killTweensOf(".modal-anim-elem"); // Prevent stagger conflict
-
-            // Animate Out
-            gsap.to(".modal-overlay", { opacity: 0, duration: 0.3 });
-            gsap.to(".modal-content", { 
-                opacity: 0, 
-                scale: 0.95, 
-                y: 10, 
-                duration: 0.3, 
-                ease: "power2.in",
-                onComplete: () => {
-                    modal.classList.add('hidden');
-                    lenis.start(); // Resume scroll
-                    document.body.style.overflow = '';
-                }
+function closeModal() {
+    if(!modal) return;
+    
+    gsap.to(".modal-content", { 
+        opacity: 0, 
+        scale: 0.95, 
+        y: 10, 
+        duration: 0.2, 
+        onComplete: () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            // Give the browser a micro-task to settle before resuming Lenis
+            requestAnimationFrame(() => {
+                lenis.start();
             });
         }
+    });
+}
 
         // ==========================================
         // 7. THREE.JS ZONE
