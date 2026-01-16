@@ -222,19 +222,21 @@
 }
     </style>
 
-<!-- ENHANCED SCHEMA MARKUP FOR AI & LOCAL SEO -->
+<!-- PROFESSIONAL SCHEMA MARKUP FOR LOCAL SEO & AI-OPTIMIZED SERVICES -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebDesignService",
-      "@id": "https://capestudios.co.uk/#website",
+      "@type": "LocalBusiness",
+      "@id": "https://capestudios.co.uk/#organization",
       "name": "Cape Studios",
-      "image": "https://capestudios.co.uk/favicon512.png",
-      "description": "Premium web design and digital strategy based in St Just, Cornwall. Specializing in high-performance, AI-optimized websites for local businesses.",
       "url": "https://capestudios.co.uk",
+      "logo": "https://capestudios.co.uk/favicon512.png",  // Replace with full logo if available (recommended: 512x512+ PNG)
+      "image": "https://capestudios.co.uk/favicon512.png",
+      "description": "Premium web design and digital strategy agency based in St Just, Cornwall. Specializing in high-performance, AI-optimized websites for local businesses, including managed hosting, SSL, and AEO (AI Engine Optimization).",
       "telephone": "+447837778893",
+      "email": "hello@capestudios.co.uk",  // Add your real email if public
       "priceRange": "££",
       "address": {
         "@type": "PostalAddress",
@@ -246,8 +248,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "50.1256",
-        "longitude": "-5.6793"
+        "latitude": 50.1256,
+        "longitude": -5.6793
       },
       "areaServed": [
         { "@type": "City", "name": "St Just" },
@@ -255,11 +257,46 @@
         { "@type": "City", "name": "St Ives" },
         { "@type": "State", "name": "Cornwall" }
       ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/capestudios",  // Add real profiles
+        "https://twitter.com/capestudios",
+        "https://www.instagram.com/capestudios",
+        "https://www.facebook.com/capestudiosuk"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://capestudios.co.uk/#service-webdesign",
+      "name": "High-Performance Web Design & AI Optimization",
+      "serviceType": "Web Design, Development, Managed Hosting, AEO (AI Engine Optimization), Branding, SEO",
+      "provider": {
+        "@id": "https://capestudios.co.uk/#organization"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Cornwall" }
+      ],
+      "description": "Ultra-fast, modern websites built for local search authority, AI visibility (ChatGPT, Google Gemini recommendations), and long-term performance. Includes managed Edge hosting, SSL, and ongoing optimizations.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "GBP",
+        "price": "Contact for custom quote",
+        "itemOffered": {
+          "@id": "https://capestudios.co.uk/#service-webdesign"
+        }
       }
     },
     {
